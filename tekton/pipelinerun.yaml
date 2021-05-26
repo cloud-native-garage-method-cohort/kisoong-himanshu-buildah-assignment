@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: kisoong-himansu-buildah-assignment2-pipeline-run-
+spec:
+  serviceAccountName: build-bot
+  pipelineRef:
+    name: kisoong-himansu-buildah-assignment2-pipeline
+  workspaces:
+    - name: pipeline-shared-data
+      persistentVolumeClaim:
+        claimName: kisoong-jang-live-pvc
+
